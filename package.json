@@ -1,0 +1,20 @@
+{
+  "name": "@very-sad-panda/the-one-front-forge",
+  "version": "0.0.0",
+  "description": "Frontend part of the one front forge. Used to explain why the panda would be so very sad...",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "test": "mocha test"
+  },
+  "dependencies": {
+    "next": "9.1.6",
+    "react": "16.12.0",
+    "react-dom": "16.12.0",
+    "@zeit/next-sass": "1.0.1"
+  },
+  "author": "Pierre Hieronymys <p.hieronymus@univapay.com>",
+  "license": "ISC"
+}
