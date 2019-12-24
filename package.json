@@ -4,17 +4,53 @@
   "description": "Frontend part of the one front forge. Used to explain why the panda would be so very sad...",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
-    "build": "next build",
+    "dev": "node --icu-data-dir=node_modules/full-icu server.js",
+    "build": "next build && npm run extract",
     "start": "next start",
+    "extract": "node ./scripts/extract-intl '*/**/messages.js'",
     "test": "mocha test"
   },
   "dependencies": {
+    "@rematch/core": "^1.3.0",
+    "@rematch/loading": "^1.2.1",
+    "@rematch/persist": "^1.1.6",
+    "@rematch/select": "^2.0.5",
+    "@zeit/next-css": "^1.0.1",
+    "@zeit/next-sass": "^1.0.1",
+    "accepts": "^1.3.7",
+    "antd": "^3.26.4",
+    "full-icu": "^1.3.0",
+    "glob": "^7.1.6",
+    "intl": "^1.2.5",
     "next": "9.1.6",
+    "node-sass": "^4.13.0",
+    "prop-types": "^15.7.2",
     "react": "16.12.0",
     "react-dom": "16.12.0",
-    "@zeit/next-sass": "1.0.1"
+    "react-intl": "^3.9.2",
+    "rematch": "^0.1.3"
   },
-  "author": "Pierre Hieronymys <p.hieronymus@univapay.com>",
-  "license": "ISC"
+  "author": "Pierre Hieronymys <xuecnahchiero@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "@formatjs/cli": "1.1.12",
+    "@formatjs/intl-relativetimeformat": "^2.8.2",
+    "@formatjs/intl-utils": "^0.6.1",
+    "chai-enzyme": "^1.0.0-beta.1",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "formatjs": "^0.1.1",
+    "jsdom": "^15.2.1",
+    "mocha": "^6.2.2",
+    "react-addons-test-utils": "^15.6.2",
+    "sinon": "^8.0.1",
+    "sinon-chai": "^3.3.0"
+  }
 }
