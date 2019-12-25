@@ -1,0 +1,24 @@
+@import '../../scss//variables';
+
+.card {
+    &.clickable {
+        cursor: pointer;
+    
+        &:hover {
+            color: white;
+            background: $link-color--hover;
+
+            :global(.ant-card-head-title) {
+                color: white;
+            }
+    
+            :global(.ant-card-head) {
+                border-bottom: 1px solid $blue-2;
+            }
+        }
+    }
+    
+    .cardIcon {
+        margin-right: 4px;
+    }
+}
