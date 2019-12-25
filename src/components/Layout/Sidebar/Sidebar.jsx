@@ -5,10 +5,13 @@ import { useRouter } from 'next/router';
 import classnames from 'classnames';
 
 import globalMessages from 'src/messages';
+import Articles from '../../../utils/constants/articles';
 
 import classNames from './styles.scss';
 
 const { SubMenu } = Menu;
+
+const quickAccessArticles = Object.keys(Articles).map((key) => Articles[key]).slice(0, 4);
 
 const menuLinks = [
     {
@@ -19,26 +22,7 @@ const menuLinks = [
         href: '/article',
         message: globalMessages.articleTitle,
         subLinks: [
-            {
-                href: '/character',
-                message: globalMessages.character,
-                icon: 'team',
-            },
-            {
-                href: '/location',
-                message: globalMessages.location,
-                icon: 'compass',
-            },
-            {
-                href: '/organization',
-                message: globalMessages.organization,
-                icon: 'flag',
-            },
-            {
-                href: '/event',
-                message: globalMessages.event,
-                icon: 'branches',
-            },
+            ...quickAccessArticles,
             {
                 href: '/article',
                 message: globalMessages.article,
