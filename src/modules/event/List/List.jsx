@@ -29,7 +29,7 @@ const List = () => {
 
     return (
         <ListPage
-            title={formatMessage(globalMessages.character)}
+            title={formatMessage(globalMessages.event)}
             headers={headers}
             modelName={listModel.name}
         />

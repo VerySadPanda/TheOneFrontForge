@@ -1,6 +1,9 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import App from 'next/app';
 import { createIntl, createIntlCache, RawIntlProvider } from 'react-intl';
+
+import store from 'src/rematch/store';
 
 import 'antd/dist/antd.css';
 
@@ -8,7 +11,7 @@ import 'antd/dist/antd.css';
 // since it prevents memory leak
 const cache = createIntlCache();
 
-export default class MyApp extends App {
+export default class TheOneForgeApp extends App {
     static async getInitialProps({ Component, ctx }) {
         const pageProps = Component.getInitialProps ? await Component.getInitialProps(ctx) : {};
 
@@ -31,9 +34,11 @@ export default class MyApp extends App {
         } = this.props;
 
         return (
-            <RawIntlProvider value={createIntl({ locale, messages }, cache)}>
-                <Component {...pageProps} />
-            </RawIntlProvider>
+            <Provider store={store}>
+                <RawIntlProvider value={createIntl({ locale, messages }, cache)}>
+                    <Component {...pageProps} />
+                </RawIntlProvider>
+            </Provider>
         );
     }
 }

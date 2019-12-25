@@ -1,0 +1,47 @@
+/**
+ * Generate the default list model
+ *
+ * @param {string} name
+ * @param {(query: object) => Promise<void>} serviceList
+ */
+const createListModel = (name, serviceList) => ({
+    name,
+
+    state: {
+        items: [],
+        count: 0,
+        query: null,
+        errors: null,
+    },
+
+    reducers: {
+        setList: (state, { items, count }) => ({ ...state, items, count }),
+        resetErrors: (state) => ({ ...state, errors: null }),
+        setErrors: (state, { errors }) => ({ ...state, errors }),
+    },
+
+    effects: ({ [name]: self }) => ({
+        list: async (query) => {
+            self.resetErrors();
+
+            const { ok, response, errors } = await serviceList(query);
+
+            if (ok) {
+                self.setList({ items: response.items, count: response.count, query });
+            } else {
+                self.setErrors({ errors });
+            }
+
+            return response;
+        },
+
+        refresh: async (_, { query }) => self.list(query),
+    }),
+
+    selectors: (slice) => ({
+        listData: () => slice((listData) => listData),
+        isLoading: () => (state) => state.loading.models[name],
+    }),
+});
+
+export default createListModel;

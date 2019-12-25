@@ -1,61 +1,111 @@
 import React, { useCallback } from 'react';
-import PropTypes from 'prop-types';
 import { Menu, Icon } from 'antd';
 import { useIntl } from 'react-intl';
 import { useRouter } from 'next/router';
+import classnames from 'classnames';
 
-import moduleMessages from '../../../messages';
+import globalMessages from 'src/messages';
 
-const links = [
+import classNames from './styles.scss';
+
+const { SubMenu } = Menu;
+
+const menuLinks = [
     {
         href: '/',
-        message: moduleMessages.home,
-        icon: 'mail',
+        message: globalMessages.home,
     },
     {
-        href: '/character',
-        message: moduleMessages.character,
-        icon: 'mail',
+        href: '/article',
+        message: globalMessages.articleTitle,
+        subLinks: [
+            {
+                href: '/character',
+                message: globalMessages.character,
+                icon: 'team',
+            },
+            {
+                href: '/location',
+                message: globalMessages.location,
+                icon: 'compass',
+            },
+            {
+                href: '/organization',
+                message: globalMessages.organization,
+                icon: 'flag',
+            },
+            {
+                href: '/event',
+                message: globalMessages.event,
+                icon: 'branches',
+            },
+            {
+                href: '/article',
+                message: globalMessages.article,
+                icon: 'ellipsis',
+            },
+        ],
+    },
+    {
+        href: '/timeline',
+        message: globalMessages.timeline,
     },
 ];
 
-const Sidebar = ({ className }) => {
+const renderLinks = (links, router, formatMessage) => (
+    links.map(({
+        href,
+        key = href,
+        message,
+        icon,
+        subLinks,
+    }) => {
+        const handleClick = useCallback(({ domEvent: event }) => {
+            router.push(href);
+
+            event.stopPropagation();
+        }, []);
+
+        if (!subLinks) {
+            return (
+                <Menu.Item
+                    key={key}
+                    onClick={handleClick}
+                >
+                    {icon && <Icon type={icon} />}
+
+                    {formatMessage(message)}
+                </Menu.Item>
+            );
+        }
+
+        return (
+            <SubMenu
+                key={key}
+                title={formatMessage(message)}
+                onTitleClick={handleClick}
+                className={classnames(classNames.subMenu, { [classNames.collapsible]: !href })}
+            >
+                {renderLinks(subLinks, router, formatMessage)}
+            </SubMenu>
+        );
+    })
+);
+
+const Sidebar = () => {
     const { formatMessage } = useIntl();
     const router = useRouter();
 
-    const currentPage = links.find(({ href }) => href === router.pathname);
-
     return (
         <Menu
-            className={className}
-            defaultSelectedKeys={[currentPage.href]}
+            className={classNames.sidebar}
+            defaultSelectedKeys={[router.asPath]}
+            defaultOpenKeys={['/article']}
+            mode="inline"
         >
-            {
-                links.map(({ href, message, icon }) => {
-                    const handleClick = useCallback(() => router.push(href), []);
-
-                    return (
-                        <Menu.Item
-                            key={href}
-                            onClick={handleClick}
-                        >
-                            <Icon type={icon} />
-
-                            {formatMessage(message)}
-                        </Menu.Item>
-                    );
-                })
-            }
+            {renderLinks(menuLinks, router, formatMessage)}
         </Menu>
     );
-};
-
-Sidebar.propTypes = {
-    className: PropTypes.string,
-};
-
-Sidebar.defaultProps = {
-    className: '',
 };
 
 export default Sidebar;

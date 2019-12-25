@@ -1,13 +1,16 @@
 import React from 'react';
-import { PageHeader } from 'antd';
+import Head from 'next/head';
 import { useIntl } from 'react-intl';
 
-import { childrenType } from '../../proptypes';
-import messages from './messages';
+import { childrenType } from 'src/proptypes';
+import globalMessages from 'src/messages';
 
+import Header from './Header';
 import Sidebar from './Sidebar';
+import Footer from './Footer';
 
 import classNames from './styles.scss';
+
 
 const Layout = ({ children }) => {
     const { formatMessage } = useIntl();
@@ -17,10 +20,12 @@ const Layout = ({ children }) => {
             className={classNames.layout}
             name="main-layout"
         >
-            <PageHeader
-                className={classNames.header}
-                title={formatMessage(messages.title)}
-            />
+            <Head>
+                <title>
+                    {formatMessage(globalMessages.title)}
+                </title>
+            </Head>
+            <Header />
 
             <div className={classNames.mainFrame}>
                 <Sidebar className={classNames.sidebar} />
@@ -30,8 +35,9 @@ const Layout = ({ children }) => {
                 </div>
             </div>
 
-            <div className={classNames.footer} />
+            <Footer />
         </div>
+
     );
 };
 

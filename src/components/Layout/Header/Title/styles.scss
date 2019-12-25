@@ -1,0 +1,17 @@
+@import '../../../../scss/variables';
+
+.title {
+    display: flex;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+
+    &:hover {
+        color: $link-color--hover;
+    }
+
+    svg {
+        margin-right: 8px;
+        font-size: 28px;
+    }
+}

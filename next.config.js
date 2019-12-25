@@ -1,4 +1,7 @@
-// next.config.js
+/* eslint-disable no-param-reassign */
+
+const path = require('path');
+
 const withSass = require('@zeit/next-sass');
 const withCSS = require('@zeit/next-css');
 
@@ -34,9 +37,19 @@ const disableModuleOnCssFiles = (config) => {
                 return useRule;
             });
 
-            delete rule.use; // eslint-disable-line no-param-reassign
+            delete rule.use;
         }
     });
+};
+
+/**
+ * Mutative function to fix the resolve plugin
+ *
+ * @param {Object} config webpack configuration
+ */
+const resolveAbsoluteImports = (config) => {
+    config.resolve.alias.src = path.join(__dirname, 'src');
+    config.resolve.alias.pages = path.join(__dirname, 'pages');
 };
 
 module.exports = withCSS(withSass({
@@ -48,7 +61,10 @@ module.exports = withCSS(withSass({
 
     webpack: (config) => {
         disableModuleOnCssFiles(config);
+        resolveAbsoluteImports(config);
 
         return config;
     },
 }));
+
+/* eslint-enable no-param-reassign */

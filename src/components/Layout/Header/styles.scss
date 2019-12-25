@@ -1,0 +1,6 @@
+@import '../../../scss/variables';
+
+.header {
+    background: $primary;
+    border-bottom: 1px solid $global-layout-border-color;
+}
