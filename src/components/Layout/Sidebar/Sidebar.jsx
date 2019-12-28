@@ -4,7 +4,7 @@ import { useIntl } from 'react-intl';
 import { useRouter } from 'next/router';
 import classnames from 'classnames';
 
-import globalMessages from 'src/messages';
+import globalMessages from '../../../messages';
 import Articles from '../../../utils/constants/articles';
 
 import classNames from './styles.scss';
@@ -13,7 +13,7 @@ const { SubMenu } = Menu;
 
 const quickAccessArticles = Object.keys(Articles).map((key) => Articles[key]).slice(0, 4);
 
-const menuLinks = [
+export const menuLinks = [
     {
         href: '/',
         message: globalMessages.home,
@@ -54,6 +54,7 @@ const renderLinks = (links, router, formatMessage) => (
             return (
                 <Menu.Item
                     key={key}
+                    name={key}
                     onClick={handleClick}
                 >
                     {icon && <Icon type={icon} />}
@@ -66,6 +67,7 @@ const renderLinks = (links, router, formatMessage) => (
         return (
             <SubMenu
                 key={key}
+                name={key}
                 title={formatMessage(message)}
                 onTitleClick={handleClick}
                 className={classnames(classNames.subMenu, { [classNames.collapsible]: !href })}
@@ -92,4 +94,4 @@ const Sidebar = () => {
     );
 };
 
-export default Sidebar;
+export default React.memo(Sidebar);

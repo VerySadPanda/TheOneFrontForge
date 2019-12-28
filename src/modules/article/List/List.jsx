@@ -1,7 +1,7 @@
 import React from 'react';
 import { useIntl } from 'react-intl';
 
-import globalMessages from 'src/messages';
+import globalMessages from '../../../messages';
 
 import CardGrid from '../../../components/CardGrid';
 import Title from '../../../components/Title';

@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import App from 'next/app';
 import { createIntl, createIntlCache, RawIntlProvider } from 'react-intl';
 
-import store from 'src/rematch/store';
+import store from '../src/rematch/store';
 
 import 'antd/dist/antd.css';
 

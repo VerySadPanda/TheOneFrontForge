@@ -2,8 +2,8 @@ import React from 'react';
 import Head from 'next/head';
 import { useIntl } from 'react-intl';
 
-import { childrenType } from 'src/proptypes';
-import globalMessages from 'src/messages';
+import { childrenType } from '../../proptypes';
+import globalMessages from '../../messages';
 
 import Header from './Header';
 import Sidebar from './Sidebar';
@@ -45,4 +45,4 @@ Layout.propTypes = {
     children: childrenType.isRequired,
 };
 
-export default Layout;
+export default React.memo(Layout);

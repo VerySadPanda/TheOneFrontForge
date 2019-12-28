@@ -1,5 +1,5 @@
-import store from 'src/rematch/store';
-import createListModel from 'src/rematch/createListModel';
+import store from '../../../rematch/store';
+import createListModel from '../../../rematch/createListModel';
 
 const dummyData = [
     {

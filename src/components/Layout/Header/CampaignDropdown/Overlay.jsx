@@ -9,19 +9,19 @@ const Overlay = () => {
 
     return (
         <Menu>
-            <Menu.Item>
+            <Menu.Item name="edit-campaign">
                 {formatMessage(messages.edit)}
             </Menu.Item>
 
-            <Menu.Item>
+            <Menu.Item name="list-campaign">
                 {formatMessage(messages.list)}
             </Menu.Item>
 
-            <Menu.Item>
+            <Menu.Item name="delete-campaign">
                 {formatMessage(messages.delete)}
             </Menu.Item>
         </Menu>
     );
 };
 
-export default Overlay;
+export default React.memo(Overlay);

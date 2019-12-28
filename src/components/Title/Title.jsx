@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { childrenType } from 'src/proptypes';
+import { childrenType } from '../../proptypes';
 
 import classNames from './styles.scss';
 
@@ -20,4 +20,4 @@ Title.defaultProps = {
     className: '',
 };
 
-export default Title;
+export default React.memo(Title);

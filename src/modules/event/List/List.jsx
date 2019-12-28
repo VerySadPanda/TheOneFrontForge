@@ -1,8 +1,8 @@
 import React from 'react';
 import { useIntl } from 'react-intl';
 
-import ListPage from 'src/components/ListPage/ListPage';
-import globalMessages from 'src/messages';
+import ListPage from '../../../components/ListPage/ListPage';
+import globalMessages from '../../../messages';
 
 import listModel from './model';
 

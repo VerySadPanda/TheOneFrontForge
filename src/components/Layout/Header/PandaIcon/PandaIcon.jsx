@@ -10,4 +10,4 @@ const PandaIcon = (props) => (
     />
 );
 
-export default PandaIcon;
+export default React.memo(PandaIcon);

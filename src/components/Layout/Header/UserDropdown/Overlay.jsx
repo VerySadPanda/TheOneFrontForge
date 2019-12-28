@@ -9,15 +9,15 @@ const Overlay = () => {
 
     return (
         <Menu>
-            <Menu.Item>
+            <Menu.Item name="user-settings">
                 {formatMessage(messages.settings)}
             </Menu.Item>
 
-            <Menu.Item>
+            <Menu.Item name="user-logout">
                 {formatMessage(messages.logout)}
             </Menu.Item>
         </Menu>
     );
 };
 
-export default Overlay;
+export default React.memo(Overlay);

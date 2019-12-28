@@ -9,4 +9,4 @@ const UserDropdown = () => (
     </Dropdown>
 );
 
-export default UserDropdown;
+export default React.memo(UserDropdown);

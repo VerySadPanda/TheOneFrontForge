@@ -2,7 +2,7 @@ import React from 'react';
 import { useIntl } from 'react-intl';
 import Link from 'next/link';
 
-import globalMessages from 'src/messages';
+import globalMessages from '../../../../messages';
 
 import PandaIcon from '../PandaIcon';
 

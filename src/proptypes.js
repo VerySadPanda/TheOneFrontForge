@@ -5,6 +5,7 @@ export const childrenType = Proptypes.oneOfType([
     Proptypes.arrayOf(Proptypes.node),
 ]);
 
-export default {
-    childrenType,
-};
+export const intlObject = Proptypes.shape({
+    id: Proptypes.string.isRequired,
+    defaultMessage: Proptypes.string,
+});

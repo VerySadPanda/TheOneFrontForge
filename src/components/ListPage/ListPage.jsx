@@ -4,10 +4,19 @@ import { Table, Alert } from 'antd';
 import { useIntl } from 'react-intl';
 import { useDispatch, useSelector } from 'react-redux';
 
-import store from 'src/rematch/store';
+import store from '../../rematch/store';
 
 import Title from '../Title';
 import { getReasonErrorMessage } from '../../utils/client/error';
+import errorMessages from '../../errorMessages';
+
+const defaultListSelect = {
+    listData: () => ({
+        items: [],
+        errors: { reason: errorMessages.modelNotLoaded },
+    }),
+    isLoading: false,
+};
 
 const ListPage = ({
     title,
@@ -17,8 +26,12 @@ const ListPage = ({
 }) => {
     const { formatMessage } = useIntl();
     const { [modelName]: { list } } = useDispatch();
-    const { items, errors } = useSelector(store.select[modelName].listData);
-    const loading = useSelector(store.select[modelName].isLoading);
+
+    // In case the developer did not import the model, shows the error nicely.
+    const listSelect = store.select[modelName] || defaultListSelect;
+
+    const { items, errors } = useSelector(listSelect.listData);
+    const loading = useSelector(listSelect.isLoading);
 
     useEffect(() => {
         list();
@@ -61,4 +74,4 @@ ListPage.defaultProps = {
     rowKey: 'id',
 };
 
-export default ListPage;
+export default React.memo(ListPage);

@@ -1,11 +1,9 @@
 import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
-import { List, Card, Icon } from 'antd';
-import { useIntl } from 'react-intl';
-import { useRouter } from 'next/router';
+import { List } from 'antd';
 
-import classNames from './styles.scss';
+import CardGridItem from './CardGridItem';
+import { gridItemShape } from './proptypes';
 
 const cardSize = {
     gutter: 16,
@@ -22,45 +20,12 @@ const CardGrid = ({
     className,
     cardClassName,
 }) => {
-    const { formatMessage } = useIntl();
-    const router = useRouter();
-
-    const renderCard = useCallback(({
-        message,
-        description = '',
-        icon,
-        href,
-    }) => {
-        const title = typeof message === 'string' ? message : formatMessage(message);
-        const cardDescription = typeof description === 'string' ? description : formatMessage(description);
-
-        const titleWithIcon = (
-            <>
-                {
-                    icon && (
-                        <Icon
-                            className={classNames.cardIcon}
-                            type={icon}
-                        />
-                    )
-                }
-
-                {title}
-            </>
-        );
-
-        return (
-            <List.Item>
-                <Card
-                    onClick={() => router.push(href)} // eslint-disable-line react/jsx-no-bind
-                    className={classnames(cardClassName, classNames.card, classNames.clickable)}
-                    title={titleWithIcon}
-                >
-                    {cardDescription}
-                </Card>
-            </List.Item>
-        );
-    }, []);
+    const renderCard = useCallback((props) => (
+        <CardGridItem
+            className={cardClassName}
+            {...props}
+        />
+    ), [cardClassName]);
 
     return (
         <List
@@ -73,7 +38,7 @@ const CardGrid = ({
 };
 
 CardGrid.propTypes = {
-    data: PropTypes.arrayOf(PropTypes.object),
+    data: PropTypes.arrayOf(gridItemShape),
     cardClassName: PropTypes.string,
     className: PropTypes.string,
 };
@@ -84,4 +49,4 @@ CardGrid.defaultProps = {
     data: [],
 };
 
-export default CardGrid;
+export default React.memo(CardGrid);

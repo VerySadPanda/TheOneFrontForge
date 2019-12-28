@@ -25,7 +25,6 @@ const getLocaleDataScript = (locale) => {
     return localeDataCache.get(lang);
 };
 
-
 // eslint-disable-next-line import/no-dynamic-require, global-require
 const getMessages = (locale) => require(`./lang/${locale}.json`);
 

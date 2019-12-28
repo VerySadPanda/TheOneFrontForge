@@ -9,4 +9,4 @@ const CampaignDropdown = () => (
     </Dropdown>
 );
 
-export default CampaignDropdown;
+export default React.memo(CampaignDropdown);

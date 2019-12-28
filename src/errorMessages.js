@@ -2,7 +2,7 @@ import { defineMessages } from 'react-intl';
 
 const basePath = 'error';
 
-const messages = defineMessages({
+const errorMessages = defineMessages({
     notFound: {
         id: `${basePath}.notFound`,
         defaultMessage: 'But? Where is my panda?... You promised me a panda!',
@@ -12,9 +12,13 @@ const messages = defineMessages({
         defaultMessage: 'The panda is currently in depression. Please try again later,',
     },
     unknown: {
-        id: `${basePath}.article.unknown`,
+        id: `${basePath}.unknown`,
         defaultMessage: 'It just all goes according to my evil plans!',
+    },
+    modelNotLoaded: {
+        id: `${basePath}.modelNotLoaded`,
+        defaultMessage: 'Model was not loaded.',
     },
 });
 
-export default messages;
+export default errorMessages;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useIntl } from 'react-intl';
 
-import globalMessages from 'src/messages';
+import globalMessages from '../../../messages';
 
 import classNames from './styles.scss';
 
@@ -19,4 +19,4 @@ const Footer = () => {
     );
 };
 
-export default Footer;
+export default React.memo(Footer);
