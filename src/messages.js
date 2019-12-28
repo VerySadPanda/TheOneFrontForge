@@ -20,7 +20,7 @@ const messages = defineMessages({
         defaultMessage: 'Characters',
     },
     characterDescription: {
-        id: `${basePath}.location.description`,
+        id: `${basePath}.character.description`,
         defaultMessage: 'Important characters for the story or in history.',
     },
     location: {
