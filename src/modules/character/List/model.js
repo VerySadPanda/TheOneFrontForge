@@ -5,17 +5,36 @@ const dummyData = [
     {
         id: '1',
         name: 'Mike',
-        age: 32,
-        address: '10 Downing Street',
+        location: {
+            id: '1',
+            name: 'City of The Horizon',
+        },
+        organization: {
+            id: '1',
+            name: 'The keepers',
+        },
     },
     {
         id: '2',
         name: 'John',
-        age: 42,
-        address: '10 Downing Street',
+        location: {
+            id: '2',
+            name: 'The Tomb of Ancients',
+        },
+        organization: {
+            id: '1',
+            name: 'The keepers',
+        },
+    },
+    {
+        id: '3',
+        name: 'Peter',
+        location: null,
+        organization: null,
     },
 ];
 
+/* istanbul ignore next */
 const queryList = async () => {
     await new Promise((resolve) => setTimeout(resolve, 1000));
 

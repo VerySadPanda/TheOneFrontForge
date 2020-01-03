@@ -91,6 +91,10 @@ const messages = defineMessages({
         id: `${basePath}.copyright`,
         defaultMessage: '© All rights reserved to pandas',
     },
+    unknown: {
+        id: `${basePath}.unknown`,
+        defaultMessage: 'Unknown',
+    },
 });
 
 export default messages;

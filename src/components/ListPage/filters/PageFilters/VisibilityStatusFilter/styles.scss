@@ -1,0 +1,12 @@
+.input {
+    padding: 4px;
+
+    :global(.ant-radio-button-wrapper):first-child {
+        border-radius: 0px;
+    }
+}
+
+.title {
+    display: inline;
+    padding: 8px 11px 5px 11px;
+}

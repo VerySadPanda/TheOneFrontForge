@@ -16,6 +16,7 @@ const dummyData = [
     },
 ];
 
+/* istanbul ignore next */
 const queryList = async () => {
     await new Promise((resolve) => setTimeout(resolve, 1000));
 

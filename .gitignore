@@ -1,3 +1,4 @@
 node_modules
 .next
 lang/.messages
+coverage

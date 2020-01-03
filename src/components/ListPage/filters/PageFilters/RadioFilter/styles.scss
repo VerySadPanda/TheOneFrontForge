@@ -1,0 +1,29 @@
+.input {
+    padding: 4px;
+    display: flex;
+
+    :global(.ant-input-group-addon) {
+        width: auto;
+    }
+
+    :global(.ant-radio-group) {
+        display: flex;
+        width: 100%;
+
+        :global(.ant-radio-button-wrapper) {
+            flex-grow: 1;
+            padding-right: 4px;
+            padding-left: 4px;
+            text-align: center;
+    
+            &:first-child {
+                border-radius: 0px;
+            }
+        }
+    }
+}
+
+.title {
+    display: inline;
+    padding: 4px 11px;
+}

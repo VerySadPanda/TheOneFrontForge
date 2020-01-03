@@ -27,5 +27,7 @@
   "global.article": "All",
   "global.timeline": "Timeline",
   "global.copyright": "© All rights reserved to pandas",
+  "global.unknown": "Unknown",
+  "module.character.content.listPlaceholder": "List placeholder",
   "module.home.content.description": "Why is my panda so very sad?"
 }

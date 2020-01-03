@@ -1,6 +1,6 @@
 @import '../../../scss/variables';
 
-.header {
-    background: $primary;
+.header:global(.ant-page-header) {
+    background-color: $primary;
     border-bottom: 1px solid $global-layout-border-color;
 }

@@ -34,5 +34,6 @@ jest.mock('react-intl', () => {
     return {
         ...reactIntl,
         useIntl: () => intl,
+        FormattedMessage: (props) => intl.formatMessage(props),
     };
 });

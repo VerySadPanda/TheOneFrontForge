@@ -11,7 +11,7 @@ import CardTitle from '../CardTitle/CardTitle';
 
 const CardGridItem = ({
     message,
-    description = '',
+    description,
     icon,
     href,
     className,

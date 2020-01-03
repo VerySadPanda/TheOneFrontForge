@@ -1,6 +1,6 @@
 @import '../../../scss/variables';
 
-.sidebar {
+.sidebar:global(.ant-menu) {
     width: $sidebar-width;
     border-right: 1px solid $global-layout-border-color;
     box-shadow: 4px 0 4px 0 $global-layout-shadow-color;
