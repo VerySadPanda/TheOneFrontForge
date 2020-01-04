@@ -15,7 +15,9 @@ const LinkColumn = ({ id, name, baseRoute }) => {
 
     return (
         <Link href={`${baseRoute}/${id}`}>
-            {displayName}
+            <a>
+                {displayName}
+            </a>
         </Link>
     );
 };

@@ -85,7 +85,7 @@ const Sidebar = () => {
     return (
         <Menu
             className={classNames.sidebar}
-            defaultSelectedKeys={[router.asPath]}
+            defaultSelectedKeys={[router.pathname]}
             defaultOpenKeys={['/article']}
             mode="inline"
         >

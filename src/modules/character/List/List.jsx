@@ -1,7 +1,7 @@
 import React from 'react';
 import { useIntl, FormattedMessage } from 'react-intl';
 
-import ListPage, { LocationColumn, OrganizationColumn } from '../../../components/ListPage';
+import ListPage, { LocationColumn, OrganizationColumn, VisibilityColumn } from '../../../components/ListPage';
 import globalMessages from '../../../messages';
 
 import messages from './messages';
@@ -25,6 +25,14 @@ const headers = [
         key: 'organization',
         render: OrganizationColumn,
     },
+    {
+        title: <FormattedMessage {...messages.status} />,
+        dataIndex: 'status',
+        key: 'status',
+        render: VisibilityColumn,
+        width: '80px',
+        align: 'center',
+    },
 ];
 
 const filters = [
@@ -38,7 +46,7 @@ const filters = [
     {
         label: <FormattedMessage {...messages.status} />,
         name: 'status',
-        type: 'visibilityStatus',
+        type: 'visibility',
         sm: 24,
         md: 12,
     },

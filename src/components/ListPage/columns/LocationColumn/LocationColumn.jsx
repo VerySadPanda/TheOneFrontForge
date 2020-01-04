@@ -3,7 +3,7 @@ import Proptypes from 'prop-types';
 
 import LinkColumn from '../LinkColumn';
 
-const LocationColumn = ({ id, name }) => (
+export const LocationColumn = ({ id, name }) => (
     <LinkColumn
         id={id}
         name={name}
@@ -12,8 +12,16 @@ const LocationColumn = ({ id, name }) => (
 );
 
 LocationColumn.propTypes = {
-    id: Proptypes.string.isRequired,
-    name: Proptypes.string.isRequired,
+    id: Proptypes.string,
+    name: Proptypes.string,
 };
 
-export default LocationColumn;
+LocationColumn.defaultProps = {
+    id: undefined,
+    name: undefined,
+};
+
+// eslint-disable-next-line react/no-multi-comp
+const renderColumn = (location) => <LocationColumn {...location} />;
+
+export default renderColumn;

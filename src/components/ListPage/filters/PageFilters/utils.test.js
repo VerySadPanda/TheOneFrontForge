@@ -1,6 +1,6 @@
 import TextFilter from './TextFilter';
 import RadioFilter from './RadioFilter';
-import VisibilityStatusFilter from './VisibilityStatusFilter';
+import VisibilityFilter from './VisibilityFilter';
 
 import { getFilterFromType } from './utils';
 
@@ -27,10 +27,10 @@ describe('PageFilters Utils', () => {
             expect(component).toEqual(RadioFilter);
         });
 
-        it('returns the visibility status filter for "visibilityStatus" type', () => {
-            const component = getFilterFromType('visibilityStatus');
+        it('returns the visibility status filter for "visibility" type', () => {
+            const component = getFilterFromType('visibility');
 
-            expect(component).toEqual(VisibilityStatusFilter);
+            expect(component).toEqual(VisibilityFilter);
         });
 
         it('returns the text filter by default and warns', () => {

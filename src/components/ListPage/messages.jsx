@@ -1,22 +1,26 @@
 import { defineMessages } from 'react-intl';
 
-const basePath = 'components.ListPage.filters.visibilityStatusFilter';
+const basePath = 'components.ListPage';
 
 const messages = defineMessages({
     all: {
         id: `${basePath}.all`,
         defaultMessage: 'All',
     },
+    unknown: {
+        id: `${basePath}.unknown`,
+        defaultMessage: 'Unknown',
+    },
     draft: {
-        id: `${basePath}.draft`,
+        id: `${basePath}.visibility.draft`,
         defaultMessage: 'Draft',
     },
     gmOnly: {
-        id: `${basePath}.draft`,
+        id: `${basePath}.visibility.draft`,
         defaultMessage: 'GM only',
     },
     visible: {
-        id: `${basePath}.draft`,
+        id: `${basePath}.visibility.draft`,
         defaultMessage: 'Visible',
     },
 });

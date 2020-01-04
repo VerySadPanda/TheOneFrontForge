@@ -1,6 +1,6 @@
 import TextFilter from './TextFilter';
 import RadioFilter from './RadioFilter';
-import VisibilityStatusFilter from './VisibilityStatusFilter';
+import VisibilityFilter from './VisibilityFilter';
 
 export const getFilterFromType = (type) => {
     switch (type) {
@@ -10,8 +10,8 @@ export const getFilterFromType = (type) => {
     case 'radio':
         return RadioFilter;
 
-    case 'visibilityStatus':
-        return VisibilityStatusFilter;
+    case 'visibility':
+        return VisibilityFilter;
 
     default:
         // eslint-disable-next-line no-console

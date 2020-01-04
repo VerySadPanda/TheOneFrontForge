@@ -1,3 +1,3 @@
-import OrganizationColumn from './OrganizationColumn';
+import renderColumn from './OrganizationColumn';
 
-export default OrganizationColumn;
+export default renderColumn;

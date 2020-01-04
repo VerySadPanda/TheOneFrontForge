@@ -13,7 +13,7 @@ describe('<PageFilters>', () => {
         {
             label: 'Test 2',
             name: 'test2',
-            type: 'visibilityStatus',
+            type: 'visibility',
         },
         {
             label: 'Test 3',

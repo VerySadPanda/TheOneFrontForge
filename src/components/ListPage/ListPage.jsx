@@ -10,7 +10,7 @@ import store from '../../rematch/store';
 import Title from '../Title';
 import { getReasonErrorMessage } from '../../utils/client/error';
 import errorMessages from '../../errorMessages';
-import { childrenType } from '../../proptypes';
+import { filtersType } from './proptypes';
 import PageFilters from './filters/PageFilters';
 
 export const defaultListSelect = {
@@ -84,7 +84,7 @@ const ListPage = ({
 };
 
 ListPage.propTypes = {
-    filters: childrenType,
+    filters: filtersType,
     headers: PropTypes.arrayOf(PropTypes.object).isRequired,
     modelName: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,

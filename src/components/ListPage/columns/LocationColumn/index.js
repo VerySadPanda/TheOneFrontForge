@@ -1,3 +1,3 @@
-import LocationColumn from './LocationColumn';
+import renderColumn from './LocationColumn';
 
-export default LocationColumn;
+export default renderColumn;

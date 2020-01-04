@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import { Col, Radio } from 'antd';
 
 import classNames from './styles.scss';
+import RadioFilterButton from './RadioFilterButton';
 
 const RadioFilter = ({
     name,
@@ -48,12 +49,10 @@ const RadioFilter = ({
             >
                 {
                     options.map((option) => (
-                        <Radio.Button
+                        <RadioFilterButton
                             key={option.name}
-                            value={option.name}
-                        >
-                            {option.label}
-                        </Radio.Button>
+                            {...option}
+                        />
                     ))
                 }
             </Radio.Group>

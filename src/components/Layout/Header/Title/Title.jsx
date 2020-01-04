@@ -13,11 +13,11 @@ const Title = () => {
 
     return (
         <Link href="/">
-            <div className={classNames.title}>
+            <a className={classNames.title}>
                 <PandaIcon />
 
                 {formatMessage(globalMessages.title)}
-            </div>
+            </a>
         </Link>
     );
 };

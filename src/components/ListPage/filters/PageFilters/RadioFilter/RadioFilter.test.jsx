@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 import { Radio } from 'antd';
 
 import RadioFilter from './RadioFilter';
+import RadioFilterButton from './RadioFilterButton';
 
 describe('<RadioFilter>', () => {
     const props = {
@@ -32,7 +33,7 @@ describe('<RadioFilter>', () => {
     });
 
     it('renders the radio buttons', () => {
-        expect(wrapper.find(Radio.Button)).toHaveLength(props.options.length);
+        expect(wrapper.find(RadioFilterButton)).toHaveLength(props.options.length);
     });
 
     it('triggers the change callback', () => {

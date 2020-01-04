@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Row } from 'antd';
 
 import { getFilterFromType } from './utils';
+import { filtersType } from '../../proptypes';
 
 import classNames from './styles.scss';
 
@@ -46,17 +47,7 @@ const PageFilters = ({ defaultValues, filters, onChange }) => {
 
 PageFilters.propTypes = {
     defaultValues: PropTypes.objectOf(PropTypes.string),
-    filters: PropTypes.arrayOf(PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        label: PropTypes.node.isRequired,
-        type: PropTypes.string.isRequired,
-        options: PropTypes.arrayOf(PropTypes.shape({
-            name: PropTypes.string.isRequired,
-            label: PropTypes.node.isRequired,
-        })).isRequired,
-        span: PropTypes.number,
-        disabled: PropTypes.bool,
-    })),
+    filters: filtersType,
     onChange: PropTypes.func.isRequired,
 };
 

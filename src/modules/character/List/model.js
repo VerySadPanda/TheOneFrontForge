@@ -13,6 +13,7 @@ const dummyData = [
             id: '1',
             name: 'The keepers',
         },
+        status: 'visible',
     },
     {
         id: '2',
@@ -25,12 +26,14 @@ const dummyData = [
             id: '1',
             name: 'The keepers',
         },
+        status: 'gm',
     },
     {
         id: '3',
         name: 'Peter',
         location: null,
         organization: null,
+        status: 'draft',
     },
 ];
 
