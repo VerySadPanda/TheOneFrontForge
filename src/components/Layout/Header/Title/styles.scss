@@ -3,15 +3,36 @@
 .title {
     display: flex;
     align-items: center;
-    color: white;
     cursor: pointer;
+    color: white;
 
-    &:hover {
-        color: $link-color--hover;
+    a {
+        display: flex;
+        align-items: center;
+        color: white;
+    
+        &:hover {
+            color: $link-color--hover;
+        }
     }
 
-    svg {
+    .homeIcon {
         margin-right: 8px;
         font-size: 28px;
+    }
+
+    .menuIcon {
+        display: none;
+        margin-right: 8px;
+    }
+
+    @media screen and (max-width: $screen-sm) {
+        .menuIcon {
+            display: block;
+        }
+
+        .homeIcon {
+            display: none;
+        }
     }
 }

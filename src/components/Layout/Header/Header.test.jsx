@@ -5,9 +5,13 @@ import { PageHeader } from 'antd';
 import Header from './Header';
 
 describe('<Header>', () => {
+    const props = {
+        onOpenSidebar: jest.fn(),
+    };
+
     let wrapper;
     beforeEach(() => {
-        wrapper = shallow(<Header />);
+        wrapper = shallow(<Header {...props} />);
     });
 
     it('renders the page header', () => {

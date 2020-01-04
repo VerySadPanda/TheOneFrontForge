@@ -34,7 +34,7 @@ const TextFilter = ({
         >
             <Input
                 addonBefore={label}
-                value={value}
+                value={value || ''}
                 onChange={handleChange}
                 disabled={disabled}
                 allowClear
@@ -67,7 +67,7 @@ TextFilter.defaultProps = {
     md: undefined,
     sm: undefined,
     span: undefined,
-    value: '',
+    value: undefined,
     xs: undefined,
 };
 

@@ -6,12 +6,26 @@
     height: 100vh;
     
     .mainFrame {
+        position: relative;
         display: flex;
         flex-grow: 1;
+
+        .openedSidebarMask {
+            z-index: $sidebar-mask-z-index;
+            background-color: $sidebar-mask-color;
+            opacity: 0.3;
+
+            @media screen and (max-width: $screen-sm) {
+                width: 100%;
+                height: 100%;
+                position: fixed;
+            }
+        }
 
         .body {
             padding: 1rem;
             flex-grow: 1;
+            overflow: auto;
         }
     }
 }

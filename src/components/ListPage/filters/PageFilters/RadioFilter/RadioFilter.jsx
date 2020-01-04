@@ -88,7 +88,7 @@ RadioFilter.defaultProps = {
     md: undefined,
     sm: undefined,
     span: undefined,
-    value: '',
+    value: undefined,
     xs: undefined,
 };
 

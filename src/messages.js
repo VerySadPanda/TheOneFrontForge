@@ -7,6 +7,10 @@ const messages = defineMessages({
         id: `${basePath}.title`,
         defaultMessage: 'The One Forge',
     },
+    menu: {
+        id: `${basePath}.menu`,
+        defaultMessage: 'Menu',
+    },
     home: {
         id: `${basePath}.home`,
         defaultMessage: 'Home',

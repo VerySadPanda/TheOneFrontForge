@@ -12,7 +12,7 @@ nextRouter.useRouter.mockImplementation(() => ({ push: pushMock }));
 
 describe('<CardGridItem>', () => {
     const props = {
-        message: 'test-card-1',
+        message: { id: 'test' },
     };
 
     let wrapper;

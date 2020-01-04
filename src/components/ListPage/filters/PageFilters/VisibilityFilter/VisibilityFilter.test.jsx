@@ -8,6 +8,7 @@ import VisibilityFilter from './VisibilityFilter';
 describe('<VisibilityFilter>', () => {
     const props = {
         label: 'test',
+        name: 'visibility',
         value: 'draft',
         onChange: jest.fn(),
     };

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { PageHeader } from 'antd';
 
 import Title from './Title';
@@ -12,12 +13,16 @@ const menus = [
     <UserDropdown key="user" />,
 ];
 
-const Header = () => (
+const Header = ({ onOpenSidebar }) => (
     <PageHeader
         className={classNames.header}
-        title={<Title />}
+        title={<Title onOpenSidebar={onOpenSidebar} />}
         extra={menus}
     />
 );
+
+Header.propTypes = {
+    onOpenSidebar: PropTypes.func.isRequired,
+};
 
 export default React.memo(Header);

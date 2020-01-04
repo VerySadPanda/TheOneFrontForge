@@ -32,4 +32,22 @@ describe('<Layout>', () => {
     it('renders the footer', () => {
         expect(wrapper.find(Footer)).toHaveLength(1);
     });
+
+    it('does not render the sidebar mask', () => {
+        expect(wrapper.find({ name: 'sidebar-mask' })).toHaveLength(0);
+    });
+
+    it('renders the sidebar mask when the menu is opened', () => {
+        wrapper.find(Header).simulate('openSidebar');
+        wrapper.update();
+
+        expect(wrapper.find({ name: 'sidebar-mask' })).toHaveLength(1);
+    });
+
+    it('closes the sidebar when ', () => {
+        wrapper.find(Header).simulate('openSidebar');
+        wrapper.find({ name: 'sidebar-mask' }).simulate('click');
+
+        expect(wrapper.find({ name: 'sidebar-mask' })).toHaveLength(0);
+    });
 });

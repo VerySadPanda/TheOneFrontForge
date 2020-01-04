@@ -9,8 +9,8 @@ import CardGrid from './CardGrid';
 describe('<CardGrid>', () => {
     const props = {
         data: [
-            { message: 'test-card-1' },
-            { message: 'test-card-2' },
+            { message: { id: 'test-card-1' } },
+            { message: { id: 'test-card-2' } },
         ],
         cardClassName: 'my-card',
     };
@@ -26,7 +26,7 @@ describe('<CardGrid>', () => {
 
     it('adds the card class name to the cards', () => {
         const renderCard = wrapper.find(List).prop('renderItem');
-        const cardWrapper = wrapper.wrap(renderCard());
+        const cardWrapper = wrapper.wrap(renderCard(props.data[0]));
 
         const cardItem = cardWrapper.find(CardGridItem);
         expect(cardItem).toHaveLength(1);

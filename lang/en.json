@@ -6,6 +6,7 @@
   "component.layout.header.userMenu.logout": "Logout",
   "component.layout.title": "The One Forge",
   "global.title": "The One Forge",
+  "global.menu": "Menu",
   "global.home": "Home",
   "global.article.title": "Articles",
   "global.character": "Characters",

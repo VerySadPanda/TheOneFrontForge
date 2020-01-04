@@ -96,7 +96,7 @@ describe('<ListPage>', () => {
         });
 
         it('renders the title', () => {
-            expect(wrapper.find(Title).text()).toEqual(props.title);
+            expect(wrapper.find(Title).prop('children')).toEqual(props.title);
         });
 
         it('renders the filters', () => {

@@ -1,4 +1,5 @@
 import React, { useCallback } from 'react';
+import PropTypes from 'prop-types';
 import { Menu, Icon } from 'antd';
 import { useIntl } from 'react-intl';
 import { useRouter } from 'next/router';
@@ -78,13 +79,13 @@ const renderLinks = (links, router, formatMessage) => (
     })
 );
 
-const Sidebar = () => {
+const Sidebar = ({ opened }) => {
     const { formatMessage } = useIntl();
     const router = useRouter();
 
     return (
         <Menu
-            className={classNames.sidebar}
+            className={classnames(classNames.sidebar, { [classNames.opened]: opened })}
             defaultSelectedKeys={[router.pathname]}
             defaultOpenKeys={['/article']}
             mode="inline"
@@ -92,6 +93,10 @@ const Sidebar = () => {
             {renderLinks(menuLinks, router, formatMessage)}
         </Menu>
     );
+};
+
+Sidebar.propTypes = {
+    opened: PropTypes.bool.isRequired,
 };
 
 export default React.memo(Sidebar);

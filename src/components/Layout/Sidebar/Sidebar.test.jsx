@@ -11,9 +11,13 @@ nextRouter.useRouter.mockImplementation(() => ({ push: pushMock, asPath: '/' }))
 const mockEvent = { stopPropagation: jest.fn() };
 
 describe('<Sidebar>', () => {
+    const props = {
+        opened: true,
+    };
+
     let wrapper;
     beforeEach(() => {
-        wrapper = shallow(<Sidebar />);
+        wrapper = shallow(<Sidebar {...props} />);
     });
 
     afterEach(() => {

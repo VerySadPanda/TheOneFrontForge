@@ -6,9 +6,17 @@ import Title from './Title';
 import PandaIcon from '../PandaIcon';
 
 describe('<HeaderTitle>', () => {
+    const props = {
+        onOpenSidebar: jest.fn(),
+    };
+
     let wrapper;
     beforeEach(() => {
-        wrapper = shallow(<Title />);
+        wrapper = shallow(<Title {...props} />);
+    });
+
+    it('renders the menu icon', () => {
+        expect(wrapper.find({ name: 'menu-icon' })).toHaveLength(1);
     });
 
     it('renders the link', () => {
@@ -18,7 +26,13 @@ describe('<HeaderTitle>', () => {
         expect(link.prop('href')).toEqual('/');
     });
 
-    it('renders the icon', () => {
-        expect(wrapper.find(PandaIcon)).toHaveLength(1);
+    it('renders the home icon', () => {
+        expect(wrapper.find(Link).find(PandaIcon)).toHaveLength(1);
+    });
+
+    it('triggers the toggle sidebar callback', () => {
+        wrapper.find({ name: 'menu-icon' }).simulate('click');
+
+        expect(props.onOpenSidebar).toHaveBeenCalledTimes(1);
     });
 });

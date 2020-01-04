@@ -27,6 +27,8 @@ jest.spyOn(React, 'useEffect').mockImplementation((cb, deps) => {
     }
 });
 
+jest.spyOn(React, 'memo').mockImplementation((cb) => cb);
+
 jest.mock('react-intl', () => {
     const reactIntl = require.requireActual('react-intl');
     const intl = reactIntl.createIntl({ locale: 'en' });

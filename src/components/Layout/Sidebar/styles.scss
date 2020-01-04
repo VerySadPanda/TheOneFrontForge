@@ -5,6 +5,20 @@
     border-right: 1px solid $global-layout-border-color;
     box-shadow: 4px 0 4px 0 $global-layout-shadow-color;
 
+    @media screen and (max-width: $screen-sm) {
+        position: absolute;
+        left: -#{$sidebar-width};
+        top: 0;
+        transition: all 0.3s ease;
+        z-index: $sidebar-z-index;
+        height: 100%;
+        box-shadow: none;
+
+        &.opened {
+            left: 0;
+        }
+    }
+
     .subMenu {
         &:not(.collapsible) {
             :global(.ant-menu-submenu-arrow) {

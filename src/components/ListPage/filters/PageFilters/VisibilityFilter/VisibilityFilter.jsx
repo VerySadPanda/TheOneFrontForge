@@ -28,7 +28,7 @@ const VisibilityFilter = ({ ...filterProps }) => {
 
 VisibilityFilter.propTypes = {
     label: PropTypes.node.isRequired,
-    value: PropTypes.oneOf(Object.keys(visibilityStatusToData).concat('all')),
+    value: PropTypes.oneOf(Object.keys(visibilityStatusToData).concat('all', '')),
     disabled: PropTypes.bool,
     span: PropTypes.number,
 
@@ -42,7 +42,7 @@ VisibilityFilter.propTypes = {
 VisibilityFilter.defaultProps = {
     disabled: false,
     span: undefined,
-    value: null,
+    value: undefined,
 };
 
 export default React.memo(VisibilityFilter);

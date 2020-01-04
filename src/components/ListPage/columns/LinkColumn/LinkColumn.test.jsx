@@ -34,13 +34,13 @@ describe('<LinkColumn>', () => {
         it('renders the name', () => {
             wrapper.setProps({ name: 'Test' });
 
-            expect(wrapper.find(Link).prop('children')).toEqual('Test');
+            expect(wrapper.find(Link).find('a').prop('children')).toEqual('Test');
         });
 
         it('renders the unknown label when the name is not provided', () => {
             wrapper.setProps({ name: undefined });
 
-            expect(wrapper.find(Link).prop('children')).toEqual('Unknown');
+            expect(wrapper.find(Link).find('a').prop('children')).toEqual('Unknown');
         });
     });
 });

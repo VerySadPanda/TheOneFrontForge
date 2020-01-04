@@ -3,4 +3,12 @@
 .header:global(.ant-page-header) {
     background-color: $primary;
     border-bottom: 1px solid $global-layout-border-color;
+
+    @media (max-width: 576px) {
+        :global(.ant-page-header-heading-extra) {
+            float: right;
+            width: unset;
+            padding: 0;
+        }
+    }
 }

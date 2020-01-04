@@ -12,12 +12,13 @@ describe('<PageFilters>', () => {
         },
         {
             label: 'Test 2',
-            name: 'test2',
+            name: 'visible',
             type: 'visibility',
         },
         {
             label: 'Test 3',
             name: 'test3',
+            options: [],
             type: 'radio',
         },
     ];
@@ -26,6 +27,7 @@ describe('<PageFilters>', () => {
         defaultValues: {
             test1: 'value',
             test2: null,
+            test3: 'test',
         },
         filters,
         onChange: jest.fn(),
@@ -48,9 +50,13 @@ describe('<PageFilters>', () => {
                 });
 
                 it('triggers the change function', () => {
-                    wrapper.find({ name }).simulate('change', name, 'new-value');
+                    const updatedValue = type === 'visibility' ? 'draft' : 'new-value';
+                    wrapper.find({ name }).simulate('change', name, updatedValue);
 
-                    expect(props.onChange).toHaveBeenCalledWith({ ...props.defaultValues, [name]: 'new-value' });
+                    expect(props.onChange).toHaveBeenCalledWith({
+                        ...props.defaultValues,
+                        [name]: updatedValue,
+                    });
                 });
             });
         });

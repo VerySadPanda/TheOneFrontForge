@@ -46,7 +46,7 @@ const PageFilters = ({ defaultValues, filters, onChange }) => {
 };
 
 PageFilters.propTypes = {
-    defaultValues: PropTypes.objectOf(PropTypes.string),
+    defaultValues: PropTypes.object,
     filters: filtersType,
     onChange: PropTypes.func.isRequired,
 };
