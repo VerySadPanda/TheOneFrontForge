@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useIntl } from 'react-intl';
 import Link from 'next/link';
-import { Tooltip, Icon } from 'antd';
+import { Icon } from 'antd';
 
 import globalMessages from '../../../../messages';
 
@@ -20,12 +20,7 @@ const Title = ({ onOpenSidebar }) => {
                 className={classNames.menuIcon}
                 onClick={onOpenSidebar}
             >
-                <Tooltip
-                    title={formatMessage(globalMessages.menu)}
-                    placement="bottom"
-                >
-                    <Icon type="menu" />
-                </Tooltip>
+                <Icon type="menu" />
             </div>
 
             <Link href="/">

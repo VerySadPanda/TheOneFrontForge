@@ -14,6 +14,7 @@
             z-index: $sidebar-mask-z-index;
             background-color: $sidebar-mask-color;
             opacity: 0.3;
+            cursor: pointer;
 
             @media screen and (max-width: $screen-sm) {
                 width: 100%;

@@ -5,11 +5,11 @@
         cursor: pointer;
     
         &:hover {
-            color: white;
+            color: $primary-background-text;
             background: $link-color--hover;
 
             :global(.ant-card-head-title) {
-                color: white;
+                color: $primary-background-text;
             }
     
             :global(.ant-card-head) {
