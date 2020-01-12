@@ -67,12 +67,12 @@ const messages = defineMessages({
         id: `${basePath}.race.description`,
         defaultMessage: 'Race of plants, animals, insects, ...',
     },
-    ethnie: {
-        id: `${basePath}.ethnie`,
-        defaultMessage: 'Ethnies',
+    ethnicity: {
+        id: `${basePath}.ethnicity`,
+        defaultMessage: 'Ethnicity',
     },
-    ethnieDescription: {
-        id: `${basePath}.ethnie.description`,
+    ethnicityDescription: {
+        id: `${basePath}.ethnicity.description`,
         defaultMessage: 'People from a specific country of region.',
     },
     condition: {

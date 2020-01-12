@@ -4,15 +4,24 @@ import createListModel from '../../../rematch/createListModel';
 const dummyData = [
     {
         id: '1',
-        name: 'Mike',
-        age: 32,
-        address: '10 Downing Street',
+        name: 'The panda sees a bamboo',
+        date: 943,
+        type: 'Economic',
+        status: 'gm',
     },
     {
         id: '2',
-        name: 'John',
-        age: 42,
-        address: '10 Downing Street',
+        name: '?',
+        date: 949,
+        type: 'Military',
+        status: 'draft',
+    },
+    {
+        id: '3',
+        name: 'The panda is sad',
+        date: 954,
+        type: 'Civil War',
+        status: 'visible',
     },
 ];
 
